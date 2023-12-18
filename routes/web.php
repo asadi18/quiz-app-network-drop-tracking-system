@@ -15,7 +15,7 @@ Router::get('/', function (Request $request, Response $response) {
 })->name('welcome');
 Router::get('/home', 'welcome1');
 
-Router::get('/login', 'login');
+Router::get('/login', 'login')->name('login');
 
 // Router::get('/home/{id}', [HomeController::class, 'index'])->middleware('auth')->name('home.index');
 Router::get('/home/{id}', [HomeController::class, 'index'])->name('home.index');
