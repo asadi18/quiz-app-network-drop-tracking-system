@@ -1,0 +1,30 @@
+<?php
+
+namespace {{Namespace}};
+
+use LaraCore\Framework\Controller;
+use LaraCore\Framework\Request;
+use LaraCore\Framework\Response;
+
+class {{ControllerName}} extends Controller
+{
+  public function __construct()
+  {
+    parent::__construct();
+  }
+  public function index(Request $request, Response $response)
+  {
+    // Example data
+    $data = [
+      'title' => 'Home Page',
+      'name' => 'LaraCore Framework'
+    ];
+    // Render view
+    return $this->view('home', $data);
+  }
+
+  public function list(Request $request, Response $response)
+  {
+    // To do something
+  }
+}

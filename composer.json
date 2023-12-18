@@ -1,0 +1,60 @@
+{
+  "name": "lora/core",
+  "description": "A simple and efficiency PHP framework for building web application.",
+  "type": "library",
+  "keywords": [
+    "framework",
+    "php",
+    "lora",
+    "core",
+    "mvc"
+  ],
+  "readme": "https://github.com/mdabbas-cse/php-mvc-framework/blob/main/README.md",
+  "time": "",
+  "support": {
+    "issues": "https://github.com/mdabbas-cse/php-mvc-framework/issues",
+    "source": "https://github.com/mdabbas-cse/php-mvc-framework",
+    "wiki": "https://github.com/mdabbas-cse/php-mvc-framework/wiki"
+  },
+  "require": {
+    "php": "^7.4.2|^8.0",
+    "friendsofphp/php-cs-fixer": "^3.13"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "mdabbas-cse",
+      "email": "gmabbas44@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "minimum-stability": "alpha",
+  "autoload": {
+    "psr-4": {
+      "LaraCore\\": "./",
+      "LaraCore\\Framework\\": "./framework/",
+      "LaraCore\\App\\": "./app/",
+      "LaraCore\\Config\\": "./config/",
+      "LaraCore\\Database\\": "./database/",
+      "LaraCore\\Resources\\": "./resources/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LaraCore\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit --testdox --colors=always tests/ --exclude-group db",
+    "unused-variables": "phpcs -p --standard=VariableAnalysis includes",
+    "variable-fix": "vendor/bin/psalter --alter --issues=UnusedVariable",
+    "version": "phpcs -p --standard=PHPCompatibilityWP --runtime-set testVersion 5.6-8.1 includes",
+    "fix-all": "php-cs-fixer fix includes",
+    "fix": "php-cs-fixer fix",
+    "pcf-commands": "php-cs-fixer",
+    "code-status": "php-cs-fixer fix --dry-run --show-progress=dots --ansi --diff -vv ./",
+    "post-install-cmd": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
+  }
+}
