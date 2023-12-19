@@ -16,7 +16,7 @@ class submission_2023_12_18_235102 extends Migration
       $table->text('submission_info');
       $table->text('submission_ans');
       $table->text('right_ans');
-      $table->tinyInteger('pick_ans');
+      $table->integer('pick_ans');
       $table->timestamps();
     });
   }
