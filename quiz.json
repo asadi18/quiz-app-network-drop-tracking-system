@@ -1,0 +1,171 @@
+[
+  {
+    "question": "What is the capital of the United States?",
+    "answer": "b",
+    "choices": {
+      "a": "New York City",
+      "b": "Washington, D.C.",
+      "c": "Los Angeles",
+      "d": "Chicago"
+    }
+  },
+  {
+    "question": "What is the capital of the United Kingdom?",
+    "answer": "c",
+    "choices": {
+      "a": "Manchester",
+      "b": "Liverpool",
+      "c": "London",
+      "d": "Birmingham"
+    }
+  },
+  {
+    "question": "What is the capital of France?",
+    "answer": "a",
+    "choices": {
+      "a": "Paris",
+      "b": "Marseille",
+      "c": "Lyon",
+      "d": "Toulouse"
+    }
+  },
+  {
+    "question": "What is the capital of Germany?",
+    "answer": "d",
+    "choices": {
+      "a": "Hamburg",
+      "b": "Munich",
+      "c": "Cologne",
+      "d": "Berlin"
+    }
+  },
+  {
+    "question": "What is the capital of Italy?",
+    "answer": "b",
+    "choices": {
+      "a": "Naples",
+      "b": "Rome",
+      "c": "Milan",
+      "d": "Turin"
+    }
+  },
+  {
+    "question": "What is the capital of Spain?",
+    "answer": "c",
+    "choices": {
+      "a": "Barcelona",
+      "b": "Valencia",
+      "c": "Madrid",
+      "d": "Seville"
+    }
+  },
+  {
+    "question": "What is the capital of Portugal?",
+    "answer": "a",
+    "choices": {
+      "a": "Lisbon",
+      "b": "Porto",
+      "c": "Braga",
+      "d": "Coimbra"
+    }
+  },
+  {
+    "question": "What is the capital of Poland?",
+    "answer": "b",
+    "choices": {
+      "a": "Krakow",
+      "b": "Warsaw",
+      "c": "Wroclaw",
+      "d": "Poznan"
+    }
+  },
+  {
+    "question": "What is the capital of Russia?",
+    "answer": "d",
+    "choices": {
+      "a": "Saint Petersburg",
+      "b": "Novosibirsk",
+      "c": "Yekaterinburg",
+      "d": "Moscow"
+    }
+  },
+  {
+    "question": "What is the capital of Ukraine?",
+    "answer": "a",
+    "choices": {
+      "a": "Kiev",
+      "b": "Kharkiv",
+      "c": "Odessa",
+      "d": "Dnipro"
+    }
+  },
+  {
+    "question": "What is the capital of Turkey?",
+    "answer": "c",
+    "choices": {
+      "a": "Istanbul",
+      "b": "Ankara",
+      "c": "Izmir",
+      "d": "Bursa"
+    }
+  },
+  {
+    "question": "What is the capital of Egypt?",
+    "answer": "b",
+    "choices": {
+      "a": "Alexandria",
+      "b": "Cairo",
+      "c": "Giza",
+      "d": "Luxor"
+    }
+  },
+  {
+    "question": "What is the capital of South Africa?",
+    "answer": "d",
+    "choices": {
+      "a": "Johannesburg",
+      "b": "Cape Town",
+      "c": "Durban",
+      "d": "Pretoria"
+    }
+  },
+  {
+    "question": "What is the capital of Nigeria?",
+    "answer": "a",
+    "choices": {
+      "a": "Lagos",
+      "b": "Kano",
+      "c": "Ibadan",
+      "d": "Abuja"
+    }
+  },
+  {
+    "question": "What is the capital of Kenya?",
+    "answer": "c",
+    "choices": {
+      "a": "Nairobi",
+      "b": "Mombasa",
+      "c": "Kisumu",
+      "d": "Nakuru"
+    }
+  },
+  {
+    "question": "What is the capital of India?",
+    "answer": "b",
+    "choices": {
+      "a": "Mumbai",
+      "b": "New Delhi",
+      "c": "Bangalore",
+      "d": "Hyderabad"
+    }
+  },
+  {
+    "question": "What is the capital of China?",
+    "answer": "a",
+    "choices": {
+      "a": "Beijing",
+      "b": "Shanghai",
+      "c": "Guangzhou"
+    }
+  }
+]
