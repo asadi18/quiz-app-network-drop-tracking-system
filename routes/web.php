@@ -11,11 +11,11 @@ use LaraCore\Framework\Routers\Router;
 // $routes->get('/welcome', 'welcome');
 
 Router::get('/', function (Request $request, Response $response) {
-  return view('welcome');
+  return view('login');
 })->name('welcome');
-Router::get('/home', 'welcome1');
+//Router::get('/home', 'welcome1');
 
-Router::get('/login', 'login')->name('login');
+//Router::get('/login', 'login')->name('login');
 
 // Router::get('/home/{id}', [HomeController::class, 'index'])->middleware('auth')->name('home.index');
 Router::get('/home/{id}', [HomeController::class, 'index'])->name('home.index');

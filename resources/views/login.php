@@ -39,11 +39,8 @@
           <input type="password" required />
           <label>Password</label>
         </div>
-        <div class="remember-forgot">
-          <label><input type="checkbox" /> Remember me </label>
-          <a href="#">Forgot Password</a>
-        </div>
-        <button type="submit" class="btn">Login</button>
+
+        <button type="submit" class="login-btn">Login</button>
         <div class="login-register">
 
         </div>
