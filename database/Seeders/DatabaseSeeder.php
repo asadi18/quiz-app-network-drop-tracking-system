@@ -8,8 +8,10 @@ class DatabaseSeeder extends Seeder
 {
   public function run()
   {
-    $this->call(QuizSeeder::class);
-    // $this->call(UserSeeder::class);
-    // $this->call(SubmissionSeeder::class);
+    $this->callMany([
+      QuizSeeder::class,
+      // UserSeeder::class,
+      // SubmissionSeeder::class
+    ]);
   }
 }
