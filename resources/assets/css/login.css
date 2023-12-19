@@ -98,6 +98,7 @@ header {
   font-size: 2em;
   color: #ffffff;
   text-align: center;
+  padding-top: -350px;
 }
 .input-box {
   position: relative;
@@ -154,8 +155,21 @@ header {
   font-weight: 500;
 }
 .login-btn:hover {
-  border: 2px solid #d6d2d2;
+  border: 2px solid #121571;
   border-radius: 5px;
-  background-color: #ffffff;
-  color: #002456;
+  background-color: #042e67db;
+  color: #ffffff;
+}
+.login-register {
+  margin-top: 20px;
+  padding-right: 5px;
+  display: flex;
+  color: #fff;
+}
+.login-register a {
+  color: #d6d2d2;
+  margin-left: 30px;
+}
+.login-register a:hover {
+  color: white;
 }

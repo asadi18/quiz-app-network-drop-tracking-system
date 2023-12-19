@@ -16,9 +16,12 @@ Router::get('/', function (Request $request, Response $response) {
 //Router::get('/home', 'welcome1');
 
 //Router::get('/login', 'login')->name('login');
+Router::get('/quiz1', 'quiz1')->name('quiz1');
+//Router::get('/register', 'register')->name('register');
+
 
 // Router::get('/home/{id}', [HomeController::class, 'index'])->middleware('auth')->name('home.index');
-Router::get('/home/{id}', [HomeController::class, 'index'])->name('home.index');
+//Router::get('/home/{id}', [HomeController::class, 'index'])->name('home.index');
 
 Router::get('/contact', 'login')->name('contact');
 Router::post('/contact-store', [UserController::class, 'contact'])->name('store.user');

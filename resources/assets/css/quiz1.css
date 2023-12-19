@@ -1,0 +1,78 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  width: 80%;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 28px;
+  margin: 50px 0 10px 0;
+}
+
+section {
+  padding: 20px;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Improved radio button styles */
+input[type="radio"] {
+  margin-left: 10px;
+  margin-right: 5px;
+  margin-bottom: 8px;
+  transform: translateY(2px);
+}
+
+/* Style for label text beside radio buttons */
+form label {
+  display: block;
+  margin-bottom: 6px;
+  margin-left: 30px;
+}
+
+/* Card styles for each question */
+h3 {
+  /* background: linear-gradient(135deg, #058ecc 0%, #012351 100%); */
+  margin-top: 300px;
+  border-bottom: 1px solid #058ecc;
+
+  color: #000000;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+}
+
+/* Submit button styles */
+input[type="submit"] {
+  background-color: #058ecc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #012351;
+}

@@ -12,38 +12,39 @@
 </head>
 
 <body>
-  <header>
+  <!-- <header>
     <h2 class="logo">Qanfs</h2>
     <nav class="navigation">
       <button class="btnLogin-popup">Login</button>
     </nav>
-  </header>
+  </header> -->
 
   <div class="wrapper">
     <div class="form-box login">
       <h2>Login</h2>
       <form action="#">
         <div class="input-box">
-          <span class="icon">
-            <ion-icon name="mail"></ion-icon>
-          </span>
+          <!-- <span class="icon">
+            <ion-icon name="user"></ion-icon>
+          </span> -->
 
           <input type="email" required />
-          <label>Email</label>
+          <label>Student ID</label>
         </div>
-        <div class="input-box">
+        <!-- <div class="input-box">
           <span class="icon">
             <ion-icon name="lock-closed"></ion-icon>
           </span>
 
           <input type="password" required />
           <label>Password</label>
-        </div>
+        </div> -->
 
-        <button type="submit" class="login-btn">Login</button>
-        <div class="login-register">
-
-        </div>
+        <button type="submit" class="login-btn">GO</button>
+        <!-- <div class="login-register">
+          <p>Don't Have account ?</p>
+          <a href="">Register Now!</a>
+        </div> -->
       </form>
     </div>
   </div>
