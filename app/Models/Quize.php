@@ -6,8 +6,8 @@ use LaraCore\Framework\Db\DataModel;
 
 class Quize extends DataModel
 {
-  protected $table = 'users';
-  protected $fillable = [];
+  protected $table = 'quizzes';
+  protected $fillable = ['questions'];
 
   public function tableName(): string
   {
