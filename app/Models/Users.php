@@ -3,13 +3,12 @@
 namespace LaraCore\App\Models;
 
 use LaraCore\Framework\Db\DataModel;
-use LaraCore\Framework\Helpers\Hash;
 use LaraCore\Framework\Session;
 
 class Users extends DataModel
 {
   protected $table = 'users';
-  protected $fillable = ['firstname', 'lastname', 'email', 'password', 'status'];
+  protected $fillable = ['studentId'];
 
   public function tableName(): string
   {
@@ -23,8 +22,6 @@ class Users extends DataModel
 
   public function save()
   {
-    $this->password = Hash::make($this->password);
-    $this->status = 1;
     return parent::save();
   }
 
@@ -33,11 +30,18 @@ class Users extends DataModel
    */
   public function login()
   {
-    $user = $this->findOne(['email' => $this->email]);
+    $user = $this->findOne(['studentId' => $this->studentId]);
     if ($user) {
-      if (Hash::verify($this->password, $user->password)) {
-        Session::set('user', $user);
-      }
+      $data = [
+        'id' => $user->id,
+        'studentId' => $user->studentId,
+        'name' => $user->name,
+      ];
+      // dd($user->id);
+      Session::set('user', $data);
+      return true;
+    } else {
+      return false;
     }
   }
 }

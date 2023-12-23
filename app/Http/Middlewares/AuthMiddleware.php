@@ -3,13 +3,14 @@
 namespace LaraCore\App\Http\Middlewares;
 
 use LaraCore\Framework\Request;
+use LaraCore\Framework\Session;
 
 class AuthMiddleware
 {
   public function handle(Request $request, $next)
   {
-    if (!isset($_SESSION['user'])) {
-      return redirect()->route('welcome');
+    if (!Session::get('user')) {
+      return redirect()->route('login.form');
     }
     return $next($request);
   }
