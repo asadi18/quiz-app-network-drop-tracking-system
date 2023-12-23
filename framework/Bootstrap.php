@@ -8,4 +8,4 @@ $app = new Application();
 
 $app->run();
 
-session_destroy();
+// session_destroy();
