@@ -28,7 +28,7 @@
             <ion-icon name="user"></ion-icon>
           </span> -->
 
-          <input type="email" required />
+          <input type="text" required />
           <label>Student ID</label>
         </div>
         <!-- <div class="input-box">

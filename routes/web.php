@@ -2,6 +2,7 @@
 
 use LaraCore\App\Http\Controllers\Auth\AuthController;
 use LaraCore\App\Http\Controllers\HomeController;
+use LaraCore\App\Http\Controllers\QuizController;
 use LaraCore\App\Http\Controllers\UserController;
 use LaraCore\App\Http\Middlewares\AuthMiddleware;
 use LaraCore\Framework\Request;
@@ -16,7 +17,9 @@ Router::get('/', function (Request $request, Response $response) {
 //Router::get('/home', 'welcome1');
 
 //Router::get('/login', 'login')->name('login');
-Router::get('/quiz1', 'quiz1')->name('quiz1');
+Router::get('/quiz1', [QuizController::class, 'index'])->name('quiz1');
+Router::get('/quiz-show', [QuizController::class, 'show'])->name('quiz.show');
+
 //Router::get('/register', 'register')->name('register');
 
 

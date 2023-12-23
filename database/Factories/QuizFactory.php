@@ -12,7 +12,7 @@ class QuizFactory extends Factory
     $quizJson = file_get_contents(base_path('quiz.json'));
     $quiz = json_decode($quizJson, true);
     return [
-      'questions' => json_encode($quiz[2])
+      'questions' => json_encode($quiz[9])
     ];
   }
 
@@ -25,5 +25,4 @@ class QuizFactory extends Factory
   {
     return new static;
   }
-
 }
