@@ -12,6 +12,13 @@ class QuizController extends Controller
   {
     return $this->view('quiz1');
   }
+
+  public function result()
+  {
+    return $this->view('result');
+
+  }
+
   public function store(Request $request)
   {
     if ($request->isPost()) {
