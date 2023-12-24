@@ -9,9 +9,9 @@ class GuestMiddleware
 {
   public function handle(Request $request, $next)
   {
-    // if (!Session::get('user')) {
-    //   return redirect()->route('login.form');
-    // }
+    if (Session::get('user')) {
+      return redirect()->route('quiz.show');
+    }
     return $next($request);
   }
 }
