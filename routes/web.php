@@ -15,6 +15,7 @@ Router::get('/quiz', [QuizController::class, 'show'])->middleware('auth')->name(
 
 // for result
 Router::get('/result', [QuizController::class, 'result'])->middleware('auth')->name('quiz.result');
+Router::post('/result-store', [QuizController::class, 'store'])->middleware('auth')->name('result.store');
 
 
 // Router::get('/home/{id}', [HomeController::class, 'index'])->middleware('auth')->name('home.index');
