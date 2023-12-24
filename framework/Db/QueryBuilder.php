@@ -22,7 +22,7 @@ class QueryBuilder implements QueryBuilderInterface
   {
     $statement = $this->prepare("select * from {$table}");
     $statement->execute();
-    return $statement->fetchAll(PDO::FETCH_CLASS, $intoClass);
+    return $statement->fetchAll(PDO::FETCH_OBJ);
   }
 
   /**

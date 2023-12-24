@@ -10,7 +10,6 @@ class QuizController extends Controller
 {
   public function index()
   {
-    // return view('users');
     return $this->view('quiz1');
   }
   public function store(Request $request)
@@ -24,12 +23,9 @@ class QuizController extends Controller
 
   public function show(Request $request)
   {
-
-    //dd($request->getParam('id'));
-    $quize = new Quize();
-    $resuls = $quize->getAll();
-    dd($resuls);
-    // return view('user', ['id' => $id]);
+    $quiz = new Quize();
+    $result = $quiz->getAll();
+    return $this->view('quiz', ['result' => $result]);
   }
 
   public function edit($id)

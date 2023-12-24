@@ -13,12 +13,13 @@ use LaraCore\Framework\Routers\Router;
 
 Router::get('/', function (Request $request, Response $response) {
   return view('login');
-})->name('welcome');
+})->middleware('guest')->name('login.form');
 //Router::get('/home', 'welcome1');
 
-//Router::get('/login', 'login')->name('login');
-Router::get('/quiz1', [QuizController::class, 'index'])->name('quiz1');
-Router::get('/quiz-show', [QuizController::class, 'show'])->name('quiz.show');
+Router::post('/login', [UserController::class, 'login']);
+Router::get('/quiz', [QuizController::class, 'show'])->middleware('auth')->name('quiz.show');
+Router::get('/logout', [UserController::class, 'logout'])->middleware('auth')->name('logout');
+// Router::get('/quiz', [QuizController::class, 'show'])->name('quiz.show');
 
 //Router::get('/register', 'register')->name('register');
 

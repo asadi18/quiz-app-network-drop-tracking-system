@@ -21,11 +21,21 @@ abstract class Model
    */
   public function all($tableName)
   {
-    return $this->db->selectAll($tableName);
+    $model = $this->getClassName();
+    return $this->db->selectAll($tableName, $model);
   }
 
   public function prepare($sql)
   {
     return $this->db->prepare($sql);
+  }
+
+  /**
+   * get inherited model class name
+   */
+  public function getClassName()
+  {
+    $model = new \ReflectionClass($this);
+    return $model->getShortName();
   }
 }

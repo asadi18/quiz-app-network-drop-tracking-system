@@ -165,6 +165,6 @@ abstract class DataModel extends Model
       $stmt->bindValue(":$key", $value);
     }
     $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_CLASS, static::class);
+    return $stmt->fetchAll(PDO::FETCH_CLASS, static::class)[0];
   }
 }

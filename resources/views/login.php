@@ -22,13 +22,13 @@
   <div class="wrapper">
     <div class="form-box login">
       <h2>Login</h2>
-      <form action="#">
+      <form action="<?= app_url('login') ?>" method="POST">
         <div class="input-box">
           <!-- <span class="icon">
             <ion-icon name="user"></ion-icon>
           </span> -->
 
-          <input type="text" required />
+          <input type="text" required name="studentId" />
           <label>Student ID</label>
         </div>
         <!-- <div class="input-box">

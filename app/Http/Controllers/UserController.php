@@ -2,11 +2,37 @@
 
 namespace LaraCore\App\Http\Controllers;
 
+use LaraCore\App\Models\Users;
 use LaraCore\Framework\Controller;
 use LaraCore\Framework\Request;
+use LaraCore\Framework\Session;
 
 class UserController extends Controller
 {
+  public function login($request, $response)
+  {
+    if ($request->isPost()) {
+      $data = $request->all();
+      $studentId = $data['studentId'];
+
+      $user = new Users();
+      $user->studentId = $studentId;
+      $login = $user->login();
+
+      if ($login) {
+        return redirect()->route('quiz.show');
+      } else {
+        return redirect()->route('login.form');
+      }
+    }
+    return redirect()->route('login.form');
+  }
+
+  public function logout()
+  {
+    Session::remove('user');
+    return redirect()->route('login.form');
+  }
   public function index()
   {
     // return view('users');
