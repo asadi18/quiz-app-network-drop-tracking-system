@@ -11,9 +11,7 @@ use LaraCore\Framework\Routers\Router;
 
 // $routes->get('/welcome', 'welcome');
 
-Router::get('/', function (Request $request, Response $response) {
-  return view('login');
-})->middleware('guest')->name('login.form');
+Router::get('/', [UserController::class, 'loginForm'])->middleware('guest')->name('login.form');
 //Router::get('/home', 'welcome1');
 
 Router::post('/login', [UserController::class, 'login']);
