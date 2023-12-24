@@ -33,6 +33,11 @@ class UserController extends Controller
     Session::remove('user');
     return redirect()->route('login.form');
   }
+
+  public function loginForm()
+  {
+    return $this->view('login');
+  }
   public function index()
   {
     // return view('users');

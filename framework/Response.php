@@ -63,4 +63,9 @@ class Response
   {
     $this->json($data, $statusCode);
   }
+
+  public function withUrl($url, $statusCode = null)
+  {
+    return $this->redirect($url, $statusCode);
+  }
 }

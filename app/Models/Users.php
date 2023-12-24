@@ -37,11 +37,19 @@ class Users extends DataModel
         'studentId' => $user->studentId,
         'name' => $user->name,
       ];
-      // dd($user->id);
       Session::set('user', $data);
       return true;
     } else {
-      return false;
+      // insert new user
+      $this->save();
+      $user = $this->findOne(['studentId' => $this->studentId]);
+      $data = [
+        'id' => $user->id,
+        'studentId' => $user->studentId,
+        'name' => $user->name,
+      ];
+      Session::set('user', $data);
+      return true;
     }
   }
 }
