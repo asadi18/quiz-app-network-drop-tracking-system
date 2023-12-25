@@ -9,8 +9,8 @@
   <div id="container">
     <a href="<?= app_url('logout') ?>" class="logout">Logout</a>
     <header>
-      <h1>Simple Javascript Quiz</h1>
-      <p>Test your knowledge in <strong>Javascript fundamentals</strong></p>
+      <h1>General Knowledge Quiz</h1>
+      <p>Test your knowledge in <strong>Global Studies </strong></p>
     </header>
     <section>
       <div id="results"></div>
@@ -18,7 +18,7 @@
         <?php
         $sl = 0;
         ?>
-        <?php foreach ($result as $quiz): ?>
+        <?php foreach ($result as $quiz) : ?>
           <?php
 
           $q = json_decode($quiz->questions);
@@ -60,68 +60,68 @@
   </div>
 
   <script>
-  const setLocalStorage = (key, data) => {
-    localStorage.setItem(key, JSON.stringify(data))
-  }
-  const getLocalStorage = (key) => {
-    return JSON.parse(localStorage.getItem(key))
-  }
-  // select all radio button by name
-  const radioBtns = document.querySelectorAll('input[type="radio"]');
-
-  function disableOptions(quizName) {
-    // Get all radio buttons for the specified quiz
-    var radioButtons = document.querySelectorAll('input[name="' + quizName + '"]');
-
-    // Disable all other options
-    radioButtons.forEach(function(radioButton) {
-      if (radioButton.value !== document.querySelector('input[name="' + quizName + '"]:checked').value) {
-        radioButton.disabled = true;
-      }
-    });
-  }
-  radioBtns.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      console.log(item.name)
-      disableOptions(item.name)
-    })
-  })
-
-  const submitForm = document.getElementById('submitForm');
-  const startTime = new Date().getTime();
-
-  submitForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-
-    // select all radio button which is checked 
-    const radioBtns = document.querySelectorAll('input[type="radio"]:checked');
-
-    const data = {}
-    radioBtns.forEach((item) => {
-      data[item.name] = item.value
-    })
-
-    const submissionInfo = {
-      startTime,
-      submissionTime: new Date().getTime(),
+    const setLocalStorage = (key, data) => {
+      localStorage.setItem(key, JSON.stringify(data))
     }
+    const getLocalStorage = (key) => {
+      return JSON.parse(localStorage.getItem(key))
+    }
+    // select all radio button by name
+    const radioBtns = document.querySelectorAll('input[type="radio"]');
 
-    formData.append('submissionInfo', JSON.stringify(submissionInfo))
-    formData.append('answers', JSON.stringify(data))
-    // store local storage
-    setLocalStorage('submissionInfo', submissionInfo)
-    setLocalStorage('answers', data)
+    function disableOptions(quizName) {
+      // Get all radio buttons for the specified quiz
+      var radioButtons = document.querySelectorAll('input[name="' + quizName + '"]');
 
-    fetch('<?= app_url('result-store') ?>', {
-        method: 'POST',
-        body: formData,
-      }).then(res => res.json())
-      .then(data => {
-        console.log(data);
-        submitForm.reset();
+      // Disable all other options
+      radioButtons.forEach(function(radioButton) {
+        if (radioButton.value !== document.querySelector('input[name="' + quizName + '"]:checked').value) {
+          radioButton.disabled = true;
+        }
+      });
+    }
+    radioBtns.forEach((item) => {
+      item.addEventListener('click', (e) => {
+        console.log(item.name)
+        disableOptions(item.name)
       })
-  })
+    })
+
+    const submitForm = document.getElementById('submitForm');
+    const startTime = new Date().getTime();
+
+    submitForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData();
+
+      // select all radio button which is checked 
+      const radioBtns = document.querySelectorAll('input[type="radio"]:checked');
+
+      const data = {}
+      radioBtns.forEach((item) => {
+        data[item.name] = item.value
+      })
+
+      const submissionInfo = {
+        startTime,
+        submissionTime: new Date().getTime(),
+      }
+
+      formData.append('submissionInfo', JSON.stringify(submissionInfo))
+      formData.append('answers', JSON.stringify(data))
+      // store local storage
+      setLocalStorage('submissionInfo', submissionInfo)
+      setLocalStorage('answers', data)
+
+      fetch('<?= app_url('result-store') ?>', {
+          method: 'POST',
+          body: formData,
+        }).then(res => res.json())
+        .then(data => {
+          console.log(data);
+          submitForm.reset();
+        })
+    })
   </script>
 
 </body>
