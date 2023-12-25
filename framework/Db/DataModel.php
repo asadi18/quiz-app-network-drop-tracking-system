@@ -167,4 +167,15 @@ abstract class DataModel extends Model
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_CLASS, static::class)[0];
   }
+
+  /**
+   * @method findWhereIn
+   * @param array $columns
+   * @return mixed
+   */
+  public function whereIn($column, $values)
+  {
+    return $this->findWhereIn($this->tableName(), $column, $values);
+
+  }
 }

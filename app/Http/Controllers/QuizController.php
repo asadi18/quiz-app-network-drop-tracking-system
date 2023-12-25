@@ -3,55 +3,67 @@
 namespace LaraCore\App\Http\Controllers;
 
 use LaraCore\App\Models\Quize;
+use LaraCore\App\Models\Submission;
 use LaraCore\Framework\Controller;
 use LaraCore\Framework\Request;
+use LaraCore\Framework\Session;
 
 class QuizController extends Controller
 {
-  public function index()
-  {
-    return $this->view('quiz1');
-  }
-
   public function result()
   {
     return $this->view('result');
-
   }
 
-  public function store(Request $request)
-  {
-    if ($request->isPost()) {
-      $data = $request->all();
-      dd($data);
-    }
-  }
-
-
-  public function show(Request $request)
+  public function show($request)
   {
     $quiz = new Quize();
     $result = $quiz->getAll();
     return $this->view('quiz', ['result' => $result]);
   }
 
-  public function edit($id)
+  public function store($request, $response)
   {
-    return view('edit-user', ['id' => $id]);
-  }
+    if ($request->isPost()) {
+      $user = Session::get('user');
+      $req = $_POST;
+      $submissionInfo = $req['submissionInfo'];
+      $answers = (array) json_decode($req['answers']);
 
-  public function delete($id)
-  {
-    return view('delete-user', ['id' => $id]);
-  }
+      // get id key from answers
+      $ids = array_keys($answers);
 
-  public function posts($id)
-  {
-    return view('user-posts', ['id' => $id]);
-  }
+      $quiz = new Quize();
+      $result = $quiz->whereIn('id', $ids);
 
-  public function contact(Request $request)
-  {
-    dd($request->all());
+      // user_id
+      //quiz_id
+      // submission_info
+      // submission_ans	
+      // right_ans
+      // pick_ans
+      $submission = new Submission();
+
+      foreach ($result as $key => $value) {
+        $questions = json_decode($value->questions);
+        if (in_array($value->id, $ids)) {
+          $submission->user_id = $user['id'];
+          $submission->quiz_id = $value->id;
+          $submission->submission_info = $submissionInfo;
+          $submission->submission_ans = $answers[$value->id];
+          $submission->right_ans = $questions->answer;
+          $submission->save();
+        }
+      }
+
+      // send json response
+      $data = [
+        'success' => true,
+        'message' => 'Data saved successfully',
+        'code' => 200,
+      ];
+
+      return $response->json($data);
+    }
   }
 }

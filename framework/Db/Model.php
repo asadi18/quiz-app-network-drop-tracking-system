@@ -25,6 +25,14 @@ abstract class Model
     return $this->db->selectAll($tableName, $model);
   }
 
+  /**
+   * get data from database where ids in array
+   */
+  public function findWhereIn($tableName, $column, $values)
+  {
+    return $this->db->findWhereIn($tableName, $column, $values);
+  }
+
   public function prepare($sql)
   {
     return $this->db->prepare($sql);

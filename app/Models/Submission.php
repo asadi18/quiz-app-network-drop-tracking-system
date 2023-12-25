@@ -4,10 +4,17 @@ namespace LaraCore\App\Models;
 
 use LaraCore\Framework\Db\DataModel;
 
-class Quize extends DataModel
+class Submission extends DataModel
 {
-  protected $table = 'quizzes';
-  protected $fillable = ['questions'];
+  protected $table = 'submissions';
+  protected $fillable = [
+    'user_id',
+    'quiz_id',
+    'submission_info',
+    'submission_ans',
+    'right_ans',
+    // 'pick_ans',
+  ];
 
   public function tableName(): string
   {
@@ -21,9 +28,6 @@ class Quize extends DataModel
 
   // public function save()
   // {
-  //   // TODO: Implement save() method.
-  //   // $this->password = Hash::make($this->password);
-  //   // $this->status = 1;
   //   return parent::save();
   // }
 }

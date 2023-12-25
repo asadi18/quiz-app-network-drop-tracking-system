@@ -67,6 +67,24 @@ class QueryBuilder implements QueryBuilderInterface
   }
 
   /**
+   * @method findWhereIn
+   * 
+   * @param $column
+   * @param $values
+   * 
+   * @return array
+   */
+  public function findWhereIn($table, $column, $values)
+  {
+    // array to string comma separated
+    $values = implode(',', $values);
+    $sql = "SELECT * FROM {$table} WHERE {$column} IN ({$values})";
+    $statement = $this->prepare($sql);
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_OBJ);
+  }
+
+  /**
    * @method for destruct data from database
    */
   public function __destruct()
