@@ -12,13 +12,22 @@ class QuizController extends Controller
 {
   public function result()
   {
-    return $this->view('result');
+    $alreadySubmitted = $this->isSubmittedGetScore();
+    if (!$alreadySubmitted) {
+      return redirect()->route('quiz.show');
+    }
+    return $this->view('result', ['result' => $alreadySubmitted]);
   }
 
   public function show($request)
   {
     $quiz = new Quize();
     $result = $quiz->getAll();
+
+    $alreadySubmitted = $this->isSubmittedGetScore();
+    if ($alreadySubmitted) {
+      return redirect()->route('quiz.result');
+    }
     return $this->view('quiz', ['result' => $result]);
   }
 
@@ -36,12 +45,6 @@ class QuizController extends Controller
       $quiz = new Quize();
       $result = $quiz->whereIn('id', $ids);
 
-      // user_id
-      //quiz_id
-      // submission_info
-      // submission_ans	
-      // right_ans
-      // pick_ans
       $submission = new Submission();
 
       foreach ($result as $key => $value) {
@@ -65,5 +68,26 @@ class QuizController extends Controller
 
       return $response->json($data);
     }
+  }
+
+  private function isSubmittedGetScore()
+  {
+    $userId = Session::get('user')['id'];
+    $submissionResult = (new Submission())->where('user_id', $userId);
+    if ($submissionResult) {
+      $score = 0;
+      foreach ($submissionResult as $value) {
+        $submissionAns = $value->submission_ans;
+        $rightAns = $value->right_ans;
+        if ($submissionAns == $rightAns) {
+          $score++;
+        }
+      }
+      return [
+        'score' => $score,
+        'total' => count($submissionResult),
+      ];
+    }
+    return false;
   }
 }
