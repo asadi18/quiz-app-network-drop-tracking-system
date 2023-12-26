@@ -76,3 +76,53 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #012351;
 }
+
+/* quiz app network fall design  */
+.popup {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 490px;
+  border-radius: 5px;
+  padding: 13px 17px 20px;
+  background: white;
+  display: flex;
+  border-top: 3px solid blue;
+  box-shadow: 0 10px 25px rgba(227, 227, 245, 0.719);
+}
+
+.popup .icon i {
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  color: white;
+  margin-right: 15px;
+  font-size: 1.2rem;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  border-radius: 50%;
+}
+.popup .title {
+  font-size: 1.2rem;
+}
+.pupup .desc {
+  color: #473737;
+  margin: 3px 0 10px;
+  font-size: 1.04rem;
+}
+.popup .reconnect {
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 0.95rem;
+  padding: 9px 15px;
+  border-radius: 4px;
+  background: #2b1fda;
+  cursor: pointer;
+}
+button.reconnect:hover {
+  opacity: 0.9;
+}

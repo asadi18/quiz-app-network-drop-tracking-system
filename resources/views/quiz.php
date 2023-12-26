@@ -4,11 +4,17 @@
 </head>
 
 <body>
+  <div class="popup">
+    <div class="icon"><i class="uil uil-wifi-slash"></i></div>
 
-  <?php
-  include "./partial/popup-networkfall.php";
+    <div class="details">
+      <h2 class="title">Lost Connection</h2>
+      <p class="desc"> Your Network is unavailabel. we will attepmt to recconet it.</p>
+      <button class="reconnect">Reconnect Now</button>
 
-  ?>
+    </div>
+  </div>
+
   <div id="container">
     <a href="<?= app_url('logout') ?>" class="logout">Logout</a>
     <header>
@@ -61,7 +67,7 @@
 
     </footer>
   </div>
-
+  <script src="<?= js("script.js") ?>"></script>
   <script>
     const setLocalStorage = (key, data) => {
       localStorage.setItem(key, JSON.stringify(data))
