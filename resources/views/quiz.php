@@ -9,8 +9,8 @@
   <div id="container">
     <a href="<?= app_url('logout') ?>" class="logout">Logout</a>
     <header>
-      <h1>General Knowledge Quiz</h1>
-      <p>Test your knowledge in <strong>Global Studies </strong></p>
+      <h1>General knowledge Quiz</h1>
+      <p>Test your knowledge in <strong>Global Information</strong></p>
     </header>
     <section>
       <div id="results"></div>
