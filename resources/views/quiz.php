@@ -3,9 +3,12 @@
   <link rel="stylesheet" href="<?= css('quiz1.css') ?>">
 </head>
 
-
-
 <body>
+
+  <?php
+  include "./partial/popup-networkfall.php";
+
+  ?>
   <div id="container">
     <a href="<?= app_url('logout') ?>" class="logout">Logout</a>
     <header>
