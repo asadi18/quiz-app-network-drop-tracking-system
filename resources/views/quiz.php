@@ -82,48 +82,10 @@
     // Get all radio buttons for the specified quiz
     var radioButtons = document.querySelectorAll('input[name="' + quizName + '"]');
 
-<<<<<<< Updated upstream
     // Disable all other options
     radioButtons.forEach(function(radioButton) {
       if (radioButton.value !== document.querySelector('input[name="' + quizName + '"]:checked').value) {
         radioButton.disabled = true;
-=======
-      // Disable all other options
-      radioButtons.forEach(function(radioButton) {
-        if (radioButton.value !== document.querySelector('input[name="' + quizName + '"]:checked').value) {
-          radioButton.disabled = true;
-        }
-      });
-    }
-    radioBtns.forEach((item) => {
-      item.addEventListener('click', (e) => {
-        console.log(item.name)
-        disableOptions(item.name)
-      })
-    })
-
-    const submitForm = document.getElementById('submitForm');
-    const startTime = new Date().getTime();
-
-    submitForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      console.log({
-        isOnline
-      });
-      const formData = new FormData();
-
-      // select all radio button which is checked 
-      const radioBtns = document.querySelectorAll('input[type="radio"]:checked');
-
-      const data = {}
-      radioBtns.forEach((item) => {
-        data[item.name] = item.value
-      })
-
-      const submissionInfo = {
-        startTime,
-        submissionTime: new Date().getTime(),
->>>>>>> Stashed changes
       }
     });
   }
