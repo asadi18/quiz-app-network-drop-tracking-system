@@ -142,7 +142,9 @@ abstract class DataModel extends Model
     $params = array_map(function ($attr) {
       return "{$attr} = :{$attr}";
     }, array_keys($where));
-    $stmt = $this->prepare("SELECT " . implode(',', $columns) . " FROM {$this->tableName()} WHERE " . implode(' AND ', $params));
+    $sql = "SELECT " . implode(',', $columns) . " FROM {$this->tableName()} WHERE " . implode(' AND ', $params);
+    dd($sql);
+    $stmt = $this->prepare($sql);
     foreach ($where as $key => $value) {
       $stmt->bindValue(":$key", $value);
     }
@@ -178,4 +180,18 @@ abstract class DataModel extends Model
     return $this->findWhereIn($this->tableName(), $column, $values);
 
   }
+
+  /**
+   * @method where
+   * @param array $columns
+   * @return mixed
+   */
+  public function where($column, $value)
+  {
+    $stmt = $this->prepare("SELECT * FROM {$this->tableName()} WHERE {$column} = :{$column}");
+    $stmt->bindValue(":{$column}", $value);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_CLASS, static::class);
+  }
+
 }
