@@ -12,7 +12,7 @@ body {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 40px;
 }
 
 header {
@@ -80,11 +80,11 @@ input[type="submit"]:hover {
 /* quiz app network fall design  */
 .popup {
   position: absolute;
-  left: 50%;
+  left: 81%;
   top: 0;
   transform: translateX(-50%);
-  width: 490px;
-  border-radius: 5px;
+  width: 377px;
+  border-radius: 15px;
   padding: 13px 17px 20px;
   background: white;
   display: flex;
@@ -125,4 +125,27 @@ input[type="submit"]:hover {
 }
 button.reconnect:hover {
   opacity: 0.9;
+}
+
+/* LOGOUT CSS */
+
+.logout {
+  padding: 20px;
+  height: 45px;
+  background-color: #002456;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.logout:hover {
+  border: 2px solid #121571;
+  border-radius: 5px;
+  background-color: #012255;
+  color: #ffffff;
 }
